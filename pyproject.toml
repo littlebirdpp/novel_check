@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "novel-check"
+version = "0.1.0"
+description = ""
+authors = ["littlebirdpp <suzuki-ga@kadokawa.jp>"]
+readme = "README.md"
+packages = [{include = "novel_check"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.2"
+numpy = "^1.26.4"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
