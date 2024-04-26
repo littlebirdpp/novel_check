@@ -16,8 +16,11 @@ COPY pyproject.toml poetry.lock* ./
 # 依存関係をインストール
 RUN poetry install --no-root
 
+# 日本語フォントのインストール
+RUN apt-get update && apt-get install -y fonts-noto-cjk
+
 # アプリケーションのファイルをコンテナ内にコピー
 COPY . .
 
 # コンテナを実行したときに実行するコマンド
-CMD ["python", "./script/data_make.py"]
+CMD ["python", "./script/data_make.py","./script/analyze.py"]
