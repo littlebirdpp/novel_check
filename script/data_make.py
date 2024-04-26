@@ -17,7 +17,7 @@ def fetch_data(url,params):
                 synopsis = novel['story']
                 key = novel['keyword']
                 biggenre =  novel['biggenre']
-                genre = novel['biggenre']
+                genre = novel['genre']
                 # ランキング、タイトル、あらすじをリストに追加
                 ranking_data.append([i, title, synopsis, key, biggenre, genre])
             # リストをDataFrameに変換
