@@ -23,4 +23,4 @@ RUN apt-get update && apt-get install -y fonts-noto-cjk
 COPY . .
 
 # コンテナを実行したときに実行するコマンド
-CMD ["python", "./script/data_make.py","./script/analyze.py"]
+CMD ["python", "./script/data_make.py"]

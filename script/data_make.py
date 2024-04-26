@@ -140,24 +140,24 @@ def main():
 
 	# データを保存
 	df=save_data(data, filename)
-	keyword_counts = extract_keywords(data)
-	keyword_counts = filter_keywords(keyword_counts)
-	# 集計結果をDataFrameとして保存
-	df_key = pd.DataFrame(list(keyword_counts.items()), columns=['Keyword', 'Count'])
-	df_key = df_key.sort_values('Count', ascending=False)  # カウントで降順にソート
-	df_key.to_csv(f'data/keyword_counts_{timestamp}.csv', index=False)
-	if not df.empty:
-		df_friends=create_keyword_graph(df,timestamp)
-		# df_keyから上位5位のキーワードを抽出
-		top_keywords = df_key['Keyword'].head(5)
+	# keyword_counts = extract_keywords(data)
+	# keyword_counts = filter_keywords(keyword_counts)
+	# # 集計結果をDataFrameとして保存
+	# df_key = pd.DataFrame(list(keyword_counts.items()), columns=['Keyword', 'Count'])
+	# df_key = df_key.sort_values('Count', ascending=False)  # カウントで降順にソート
+	# df_key.to_csv(f'data/keyword_counts_{timestamp}.csv', index=False)
+	# if not df.empty:
+	# 	df_friends=create_keyword_graph(df,timestamp)
+	# 	# df_keyから上位5位のキーワードを抽出
+	# 	top_keywords = df_key['Keyword'].head(5)
 
-		# df_friendsから、そのキーワードにマッチするvertexの行のみをフィルタリング
-		df_filtered_friends = df_friends[df_friends['Vertex'].isin(top_keywords)]
+	# 	# df_friendsから、そのキーワードにマッチするvertexの行のみをフィルタリング
+	# 	df_filtered_friends = df_friends[df_friends['Vertex'].isin(top_keywords)]
 
-		# 結果をCSVファイルとして保存
-		df_filtered_friends.to_csv(f'data/filtered_friends_{timestamp}.csv', index=False)
+	# 	# 結果をCSVファイルとして保存
+	# 	df_filtered_friends.to_csv(f'data/filtered_friends_{timestamp}.csv', index=False)
 
-		print("Filtered friends CSV file has been saved.")
+	# 	print("Filtered friends CSV file has been saved.")
 
 if __name__ == "__main__":
     main()
